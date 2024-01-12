@@ -179,21 +179,11 @@ Moreover, we conduct extensive experiments on the DAVIS dataset and various type
           <div class="content has-text-justified">
             
               <p>
-                We propose a method to equip pre-trained Text-to-Video (T2V) models with a style adapter,
-                allowing for the generation of stylized videos based on both a text prompt and a style reference
-                image.
-                The overview diagram is illustrated as the following figure.
-                In this framework, the textual description dictates the video content,
-                while the style image governs the visual style, ensuring a disentangled control over the video
-                generation process.
-              </p>
-              <p>
-                Given the limited availability of stylized videos, we employ a two-stage training strategy.
-                Initially, we utilize an image dataset abundant in artistic styles to learn reference-based style
-                modulation.
-                Subsequently, adaptation finetuning on a mixed dataset of style images and realistic videos is
-                conducted to improve the temporal
-                quality of the generated videos.
+                We propose the semantic video editing task to address the overdetailed descriptions problem 
+                and provide a two-stage mask-based method to effectively adapt this scenario while also resolving the surroundings inconsistency problem. 
+                The proposed SemEdit framework can automatically obtain semantically related masks, control the editing area, and further enhance the alignment with the text. 
+                The overview pipeline is illustrated as the following figure.
+                We validate the effectiveness of the proposed framework through extensive experiments and comparisons with baseline methods.          
               </p>
 
             
