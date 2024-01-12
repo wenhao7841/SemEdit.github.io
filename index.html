@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>SemEdit: Region Controllable Semantic Video Editing with Tuning-Free Automatic Mask Guidance</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,20 +52,25 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">SemEdit: Region Controllable Semantic Video Editing with Tuning-Free Automatic Mask Guidance</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Hao Wen</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Jinchai Zhansg</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Gongye Liu</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                <a href="a AUTHOR PERSONAL LINK" target="_blank">Peixiang Luo</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="a AUTHOR PERSONAL LINK" target="_blank">Yujiu Yang </a><sup>✉1</sup>,</span>
+              <span class="author-block">
+                <a href="a AUTHOR PERSONAL LINK" target="_blank">Jie Zhou</a><sup>2</sup></span>
+                </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
+                    <span class="author-block"><sup>1</sup>Tsinghua University, <sup>2</sup>Tencent</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
@@ -124,11 +129,10 @@
 
 
 <!-- Teaser video-->
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
         <source src="static/videos/banner_video.mp4"
         type="video/mp4">
       </video>
@@ -137,7 +141,7 @@
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
@@ -148,7 +152,15 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Text-based video editing aims to generate videos that align with given text descriptions and maintain faithfulness with source videos.
+Prior works have made effective progress in terms of temporal consistency. 
+However, they usually require an overdetailed description of the input video's content, which can be cumbersome.
+At the same time, prior works mainly focus on overall visual editing, ignoring we sometimes target local area editing but face surroundings inconsistency with the input.
+In this paper, we propose semantic video editing to simplify overdetailed descriptions for editing. Furthermore, we propose a region controllable 
+<span style="color: rgb(255, 242, 0);text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"><b>Sem</b></span>antic video 
+<span style="color: rgb(255, 242, 0);text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"><b>Edit</b></span>ing framework to address surroundings inconsistency and improve source faithfulness.
+SemEdit automatically generates semantic masks via clustering intermediate features, emphasizing regions that need to be edited. 
+Moreover, we conduct extensive experiments on the DAVIS dataset and various types of text to demonstrate the effectiveness of the proposed framework.
           </p>
         </div>
       </div>
@@ -157,121 +169,185 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- Image carousel -->
+<!-- Method -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-">
+          <h2 class="title is-2">Method</h2>
+          <div class="content has-text-justified">
+            
+              <p>
+                We propose a method to equip pre-trained Text-to-Video (T2V) models with a style adapter,
+                allowing for the generation of stylized videos based on both a text prompt and a style reference
+                image.
+                The overview diagram is illustrated as the following figure.
+                In this framework, the textual description dictates the video content,
+                while the style image governs the visual style, ensuring a disentangled control over the video
+                generation process.
+              </p>
+              <p>
+                Given the limited availability of stylized videos, we employ a two-stage training strategy.
+                Initially, we utilize an image dataset abundant in artistic styles to learn reference-based style
+                modulation.
+                Subsequently, adaptation finetuning on a mixed dataset of style images and realistic videos is
+                conducted to improve the temporal
+                quality of the generated videos.
+              </p>
+
+            
+          </div>
+          <div class="columns is-centered has-text-justified">
+            
+              <img src="static/images/framework.png" alt="" width="900">
+            
+          </div>
+          <p><br></p>
+        </div>
+</div></div></div></section>
+<!-- End Method -->
+
+<!-- Qualitative Results -->
+<!-- <section class="section hero is-light">
+  <div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+  <h2 class="title is-3">Qualitative Results</h2>
+<table width="1250" style="text-align: center;border: 1px solid black;">
+<tbody>
+<tr>
+    <th style="font-size: 16px;text-align: center;border: 1px solid black;width: 20%;">Source video</th>
+    <th style="font-size: 16px;text-align: center;border: 1px solid black;width: 20%;">ControlVideo</th>
+    <th style="font-size: 16px;text-align: center;border: 1px solid black;width: 20%;">FateZero</th>
+</tr>
+<tr>
+  <td>
+    <a href="static/videos/(cat)-cat->tiger/0_source.gif"></a>
+    <a href="static/videos/(cat)-cat->tiger/0_source.gif">
+      <img width="250" src="static/videos/(cat)-cat->tiger/0_source.gif" autoplay="" loop="" controls="" muted="">
+    </a>
+  </td>
+</tr>
+<tr>
+  <th></th>
+  <th style="font-size: 16px;text-align: center;border: 1px solid black;width: 20%;">ControlVideo + SemEdit</th>
+  <th style="font-size: 16px;text-align: center;border: 1px solid black;width: 20%;">FateZero + SemEdit</th>
+</tr>
+<tr>
+  <a href="static/videos/(cat)-cat->tiger/0_source.gif"></a>
+    <a href="static/videos/(cat)-cat->tiger/0_source.gif">
+      <img width="250" src="static/videos/(cat)-cat->tiger/0_source.gif" autoplay="" loop="" controls="" muted="">
+    </a>
+  <a href="static/videos/(cat)-cat->tiger/2_controlvideo+semedit.gif"></a>
+    <a href="static/videos/(cat)-cat->tiger/2_controlvideo+semedit.gif">
+      <img width="250" src="static/videos/(cat)-cat->tiger/2_controlvideo+semedit.gif" autoplay="" loop="" controls="" muted="">
+    </a>
+  <a href="static/videos/(cat)-cat->tiger/4_fatezero+semedit.gif"></a>
+    <a href="static/videos/(cat)-cat->tiger/4_fatezero+semedit.gif">
+      <img width="250" src="static/videos/(cat)-cat->tiger/4_fatezero+semedit.gif" autoplay="" loop="" controls="" muted="">
+    </a>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-</section>
-<!-- End image carousel -->
+</section> -->
+<!-- End Qualitative Results -->
 
-
-
-
-<!-- Youtube video -->
 <section class="hero is-small is-light">
   <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column custom-width">
+          <h2 class="title is-3">Comparisons</h2>
+          <div class="content has-text-justified">
+      <div id="results-carousel" class="carousel results-carousel" align="center">
+        <div class="item item-video1">
+           <a href="static/videos/(cat)-cat->tiger/merged.gif"></a>
+           <a href="static/videos/(cat)-cat->tiger/merged.gif">
+             <img width="900" src="static/videos/(cat)-cat->tiger/merged.gif" autoplay="" loop="" controls="" muted="">
+           </a>
+           <p class="prompt_global_vid">"cat &rarr; tiger"</p>
+           <p>&nbsp;</p>
+        </div>
+        <div class="item item-video2">
+          <a href="static/videos/(blackswan)-swan->swarovski_crystal_swan/merged.gif"></a>
+          <a href="static/videos/(blackswan)-swan->swarovski_crystal_swan/merged.gif">
+            <img width="900" src="static/videos/(blackswan)-swan->swarovski_crystal_swan/merged.gif" autoplay="" loop="" controls="" muted="">
+          </a>
+          <p class="prompt_global_vid">"swan &rarr; tiswarovski_crystal_swanger"</p>
+          <p>&nbsp;</p>
+        </div>
+        <div class="item item-video3">
+          <a href="static/videos/(boat)-boat->sailboat/merged.gif"></a>
+                <a href="static/videos/(boat)-boat->sailboat/merged.gif">
+                  <img width="900" src="static/videos/(boat)-boat->sailboat/merged.gif" autoplay="" loop="" controls="" muted="">
+                </a>
+                <p class="prompt_global_vid">"boat &rarr; sailboat"</p>
+                <p>&nbsp;</p>
+        </div>
+        <div class="item item-video4">
+          <a href="static/videos/(dog)-dog->tiger/merged.gif"></a>
+                <a href="static/videos/(dog)-dog->tiger/merged.gif">
+                  <img width="900" src="static/videos/(dog)-dog->tiger/merged.gif" autoplay="" loop="" controls="" muted="">
+                </a>
+                <p class="prompt_global_vid">"dog &rarr; tiger"</p>
+                <p>&nbsp;</p>
+        </div>
+        <div class="item item-video5">
+          <a href="static/videos/(fox)-fox->wolf/merged.gif"></a>
+                <a href="static/videos/(fox)-fox->wolf/merged.gif">
+                  <img width="900" src="static/videos/(fox)-fox->wolf/merged.gif" autoplay="" loop="" controls="" muted="">
+                </a>
+                <p class="prompt_global_vid">"fox &rarr; wolf"</p>
+                <p>&nbsp;</p>
+        </div>
+        <div class="item item-video5">
+          <a href="static/videos/(soccerball)-soccerball->volleyball/merged.gif"></a>
+                <a href="static/videos/(soccerball)-soccerball->volleyball/merged.gif">
+                  <img width="900" src="static/videos/(soccerball)-soccerball->volleyball/merged.gif" autoplay="" loop="" controls="" muted="">
+                </a>
+                <p class="prompt_global_vid">"soccerball &rarr; volleyball"</p>
+                <p>&nbsp;</p>
+        </div>
+        <div class="item item-video5">
+          <a href="static/videos/(breakdance-flare)-human->statue/merged.gif "></a>
+                <a href="static/videos/(breakdance-flare)-human->statue/merged.gif ">
+                  <img width="900" src="static/videos/(breakdance-flare)-human->statue/merged.gif " autoplay="" loop="" controls="" muted="">
+                </a>
+                <p class="prompt_global_vid">"human &rarr; statue"</p>
+                <p>&nbsp;</p>
+        </div>
+        <div class="item item-video5">
+          <a href="static/videos/(squirrel)-carrot->eggplant/merged.gif"></a>
+                <a href="static/videos/(squirrel)-carrot->eggplant/merged.gif">
+                  <img width="900" src="static/videos/(squirrel)-carrot->eggplant/merged.gif" autoplay="" loop="" controls="" muted="">
+                </a>
+                <p class="prompt_global_vid">"carrot &rarr; eggplant"</p>
+                <p>&nbsp;</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Youtube video -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
           <div class="publication-video">
-            <!-- Youtube embed code here -->
             <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
 
 
 <!--BibTex citation -->
